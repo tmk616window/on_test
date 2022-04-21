@@ -1,6 +1,4 @@
 <script lang="ts">
-	export let text: string;
-	export let counter: number;
   type content = {
     counter: number,
     text: string
@@ -8,7 +6,7 @@
   let contents: content[] = [{counter: 0, text: "new"}];
 
   const sumText = (contents: content[]) => {
-    let counterList: string[] = []
+    const counterList: string[] = []
     for (let i = 0; i < contents.length; ++i) {
       counterList.push(contents[i].text)
     }
@@ -27,17 +25,17 @@
     contents = contents.filter((_, i) => i !== id)
   };
 
-	const handleAddCounter = (index: number) => {
+	const addCounter = (index: number) => {
 		contents[index].counter += 1;
 	}
 
-	const handleRemoveCounter = (index: number) => {
+	const removeCounter = (index: number) => {
     if (contents[index].counter > 0) {
 		  contents[index].counter -= 1;
     }
   }
 
-	const handleResetCounter = (index: number) => {
+	const resetCounter = (index: number) => {
 		contents[index].counter = 0;
 	}
 </script>
@@ -45,17 +43,17 @@
 <main>
   <h1>Multiple Counter</h1>
   {#each contents as content, index}
-    <div key={index} id={index}>
+    <div id={index}>
       <input bind:value={contents[index].text} class="coutner-content">
       <div>
         {contents[index].counter}
-        <button on:click={() => handleAddCounter(index)}>
+        <button on:click={() => addCounter(index)}>
           +
         </button>
-        <button on:click={() => handleRemoveCounter(index)}>
+        <button on:click={() => removeCounter(index)}>
           −
         </button>
-        <button on:click={() => handleResetCounter(index)}>
+        <button on:click={() => resetCounter(index)}>
           0
         </button>
         <button on:click={() => removeContent(index)}>
