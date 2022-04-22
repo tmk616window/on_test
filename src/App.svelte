@@ -43,17 +43,17 @@
 <main>
   <h1>Multiple Counter</h1>
   {#each contents as content, index}
-    <div id={index}>
-      <input bind:value={contents[index].text} class="coutner-content">
-      <div>
+    <div id={index} class="content">
+      <input bind:value={contents[index].text} class="title-input item">
+      <div class="item">
         {contents[index].counter}
-        <button on:click={() => addCounter(index)}>
+        <button on:click={() => addCounter(index)} class="btn btn--orange">
           +
         </button>
-        <button on:click={() => removeCounter(index)}>
+        <button on:click={() => removeCounter(index)} class="btn btn--blue">
           −
         </button>
-        <button on:click={() => resetCounter(index)}>
+        <button on:click={() => resetCounter(index)} class="btn btn--green">
           0
         </button>
         <button on:click={() => removeContent(index)}>
@@ -84,9 +84,31 @@
 		font-weight: 100;
 	}
 
-	.coutner-content {
-    float: left;
-	}
+  .btn--orange{
+    color: #fff;
+    background-color: #eb6100;
+  }
+
+  .btn--blue{
+    color: #fff;
+    background-color: blue;
+  }
+
+  .btn--green{
+    color: #fff;
+    background-color: green;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin:0 auto;
+  }
+
+  .item {
+    width: 150px;
+  }
 
 	@media (min-width: 640px) {
 		main {
