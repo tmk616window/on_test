@@ -8,7 +8,9 @@
   const sumText = (contents: content[]) => {
     const counterList: string[] = []
     for (let i = 0; i < contents.length; ++i) {
-      counterList.push(contents[i].text)
+      if (contents[i].text != "") {
+        counterList.push(contents[i].text)
+      }
     }
     return counterList
   }
