@@ -23,8 +23,8 @@
     contents = [...contents, {counter: 0, title: "new"}];
   };
 
-  const removeContent = (id: number) => {
-    contents = contents.filter((_, i) => i !== id)
+  const removeContent = (index: number) => {
+    contents = contents.filter((_, i) => i !== index)
   };
 
 	const addCounter = (index: number) => {
