@@ -1,15 +1,15 @@
 <script lang="ts">
   type content = {
     counter: number,
-    text: string
+    title: string
   }
-  let contents: content[] = [{counter: 0, text: "new"}];
+  let contents: content[] = [{counter: 0, title: "new"}];
 
-  const sumText = (contents: content[]) => {
+  const sumTitle = (contents: content[]) => {
     const counterList: string[] = []
     for (let i = 0; i < contents.length; ++i) {
-      if (contents[i].text != "") {
-        counterList.push(contents[i].text)
+      if (contents[i].title != "") {
+        counterList.push(contents[i].title)
       }
     }
     return counterList
@@ -20,7 +20,7 @@
   }
 
   const addContent = () => {
-    contents = [...contents, {counter: 0, text: "new"}];
+    contents = [...contents, {counter: 0, title: "new"}];
   };
 
   const removeContent = (id: number) => {
@@ -46,7 +46,7 @@
   <h1>Multiple Counter</h1>
   {#each contents as content, index}
     <div id={index} class="content">
-      <input bind:value={contents[index].text} class="title-input item">
+      <input bind:value={contents[index].title} class="title-input item">
       <div class="item">
         {contents[index].counter}
         <button on:click={() => addCounter(index)} class="btn btn--orange">
@@ -67,7 +67,7 @@
   <br/>
   <button on:click={addContent}>new counter</button>
   <div>
-    <p>title list: {sumText(contents)}</p>
+    <p>title list: {sumTitle(contents)}</p>
     <p>sum of count: {sumCounter(contents)}</p>
   </div>
 </main>
