@@ -46,7 +46,7 @@
   <h1>Multiple Counter</h1>
   {#each contents as content, index}
     <div id={index} class="content">
-      <input bind:value={contents[index].title} class="title-input item">
+      <input bind:value={contents[index].title} class="item">
       <div class="item">
         {contents[index].counter}
         <button on:click={() => addCounter(index)} class="btn btn--orange">
