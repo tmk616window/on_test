@@ -65,8 +65,8 @@
   <br/>
   <button on:click={addContent}>new counter</button>
   <div>
-    <p>title list:{sumText(contents)}</p>
-    <p>{sumCounter(contents)}</p>
+    <p>title list: {sumText(contents)}</p>
+    <p>sum of count: {sumCounter(contents)}</p>
   </div>
 </main>
 
