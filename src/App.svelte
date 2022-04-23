@@ -27,19 +27,19 @@
     contents = contents.filter((_, i) => i !== index)
   };
 
-	const addCounter = (index: number) => {
-		contents[index].counter += 1;
-	}
+  const addCounter = (index: number) => {
+    contents[index].counter += 1;
+  }
 
-	const removeCounter = (index: number) => {
+  const removeCounter = (index: number) => {
     if (contents[index].counter > 0) {
-		  contents[index].counter -= 1;
+      contents[index].counter -= 1;
     }
   }
 
-	const resetCounter = (index: number) => {
-		contents[index].counter = 0;
-	}
+  const resetCounter = (index: number) => {
+    contents[index].counter = 0;
+  }
 </script>
 
 <main>
@@ -73,18 +73,18 @@
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
 
-	h1 {
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  h1 {
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+  }
 
   .btn--orange{
     color: #fff;
@@ -112,9 +112,9 @@
     width: 150px;
   }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
 </style>
